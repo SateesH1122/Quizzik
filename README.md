@@ -1,4 +1,4 @@
-# Online Quiz Platform
+# Quizzik - Online Quiz Platform
 
 ## Abstract
 Quizzik – An Online Quiz Platform is a web-based application designed to create, manage, and participate in quizzes. The platform provides administrators with tools to create quizzes comprising various question types. Participants can attempt quizzes with automatic scoring and real-time timers. Additionally, a leaderboard and performance analytics offer insights into user achievements and quiz trends. This project aims to modernize traditional assessment methods by integrating technology for a seamless and efficient quiz experience.
@@ -9,7 +9,6 @@ The Online Quiz Platform is a comprehensive web-based application designed to st
 ## Features
 - User-friendly and responsive design for seamless accessibility.
 - Scalable and secure backend for managing multiple users and quizzes.
-- Integration of analytics for improved decision-making and learning outcomes.
 - Customizable options to suit diverse educational or training needs.
 
 ## Modules
@@ -20,15 +19,23 @@ This module empowers administrators, such as teachers or quiz creators, to desig
 This module provides users with an intuitive interface to browse and attempt available quizzes. Participants can answer questions in real-time, with timers ensuring adherence to time limits. The platform automatically evaluates answers upon quiz submission, providing immediate scores based on predefined rules. This module eliminates the need for manual grading and ensures consistent, unbiased evaluation for all participants.
 
 ### Leaderboard and Analytics
-The third module focuses on providing actionable insights and fostering healthy competition among users. A dynamic leaderboard ranks participants based on their scores, accuracy, and completion time. Advanced analytics allow quiz creators to review question-wise performance, identify trends, and measure participant engagement. This module ensures transparency and motivates users to perform better in future attempts.
+The third module focuses on providing dynamic leaderboard ranks participants based on their scores, accuracy, and completion date and time.This module ensures transparency and motivates users to perform better in future attempts.
 
 ## Conclusion
 This project aims to create, conduct, and analyze quizzes, making it an invaluable tool for modern digital learning and assessments.
-
-## Bibliography
-Include any references or resources you used in your project.
 
 ## Installation
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/OnlineQuizPlatform.git
+2. Navigate to the project directory:
+   ```bash
+   cd OnlineQuizPlatform
+3. Install the necessary dependencies:
+   ```bash
+   npm install
+4. Start the application
+   ```bash
+   npm start
+   ```bash
+   ng serve
