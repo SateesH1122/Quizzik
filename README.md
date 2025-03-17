@@ -37,6 +37,19 @@ This project aims to create, conduct, and analyze quizzes, making it an invaluab
 4. Start the application
    ```bash
    ng serve
-   
 ## Screenshots
-!screenshots/admindashboard.png
+![homepage_login](https://github.com/user-attachments/assets/0cd614e1-f2ca-45d2-ab27-e53df7d0ffcf)
+
+![homepage_signup](https://github.com/user-attachments/assets/c042840b-f7a3-4fef-9742-3c17952b51c8)
+
+![aboutus](https://github.com/user-attachments/assets/5ab84f27-7d4d-4e6f-ab85-257b65ee2712)
+
+![contactus](https://github.com/user-attachments/assets/71c8a46d-be08-464e-9619-1fca9e94f684)
+
+![admindashboard](https://github.com/user-attachments/assets/42069037-ba96-47a7-9421-873f9229c2ec)
+
+![userdashboard](https://github.com/user-attachments/assets/0d16ff57-6e29-4e4c-be53-b6d12cfdb0b3)
+
+![createquiz](https://github.com/user-attachments/assets/237f5446-27da-4131-85b6-f8152cbc4e6c)
+
+![quizattempt](https://github.com/user-attachments/assets/72399906-f693-4ba2-9217-51f0951de812)
