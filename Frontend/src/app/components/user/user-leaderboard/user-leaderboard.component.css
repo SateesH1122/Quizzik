@@ -1,0 +1,107 @@
+/* .container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../../../../assets/bg1.jpg") no-repeat center center fixed;
+  background-size: cover;
+  align-items: center;
+} */
+
+.leaderboard-content {
+    margin: 7% auto;
+    min-height: calc(100vh - 200px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    width: 60%;
+    color: #fff;
+    position: relative;
+}
+
+h2 {
+    text-align: center;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+option {
+    color: black;
+}
+
+table {
+    width: 60%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    margin: auto;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
+
+th {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+tbody td {
+    color: #fff;
+}
+
+tbody td:first-child {
+    font-weight: bold;
+}
+
+.no-quiz-message {
+    text-align: center;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+}

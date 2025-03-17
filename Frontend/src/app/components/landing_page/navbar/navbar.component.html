@@ -1,0 +1,20 @@
+<nav class="navbar">
+  <div class="logo">Quizzik</div>
+  <ul class="nav-links">
+    <li *ngIf="!isLoggedIn" (click)="navigateTo('')"><a>Home</a></li>
+    <li *ngIf="isLoggedIn && role=='Admin'" (click)="navigateTo('dashboard')"><a>Dashboard</a></li>
+    <li *ngIf="isLoggedIn && role=='Student'" (click)="navigateTo('user-dashboard')"><a>Dashboard</a></li>
+    <li *ngIf="!isLoggedIn" (click)="navigateTo('about')"><a>About Us</a></li>
+    <li *ngIf="isLoggedIn" class="profile-menu">
+      <a class="profile-link">
+        {{ userName }}
+      </a>
+      <ul class="dropdown-menu">
+        <a class="dropdown-menu-item" (click)="navigateTo('profile')">Profile</a>
+        <a class="dropdown-menu-item" (click)="deleteAccount()">Delete Account</a>
+      </ul>
+    </li>
+    <li (click)="contactus()"><a>Contact</a></li>
+    <li *ngIf="isLoggedIn" (click)="logout()"><a>Logout</a></li>
+  </ul>
+</nav>

@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<div class="dashboard-container">
+  <h2>Admin Dashboard</h2>
+  <div class="cards">
+    <div class="card" (click)="navigateTo('create-quiz')">
+      <div class="icon">+</div>
+      <h3>Create Quiz</h3>
+    </div>
+    <div class="card" (click)="navigateTo('leaderboard')">
+      <div class="icon">+</div>
+      <h3>View Leaderboard</h3>
+    </div>
+    <div class="card" (click)="navigateTo('delete-quiz')">
+      <div class="icon">+</div>
+      <h3>Delete Quiz</h3>
+    </div>
+
+  </div>
+  <div class="created-quizzes">
+    <h4>Created Quizzes</h4>
+    <div *ngIf="quizzes.length === 0">
+      <h3>No quizzes created yet.</h3>
+    </div>
+
+    <div *ngFor="let quiz of quizzes" class="quiz-item">
+      <h4>Title : {{ quiz.title }}</h4>
+      <p>Description : {{ quiz.description }}</p>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

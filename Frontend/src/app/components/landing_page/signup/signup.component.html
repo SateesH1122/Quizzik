@@ -1,0 +1,136 @@
+<!-- <form class="form">
+    <div class="flex-column">
+        <label>Username</label>
+        <div class="inputForm">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-width="2"
+                    d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            </svg>
+            <input type="text" class="input" placeholder="Enter your Username">
+        </div>
+    </div>
+    <div class="flex-column">
+        <label>Email</label>
+        <div class="inputForm">
+            <svg height="20" viewBox="0 0 32 32" width="20" xmlns="http://www.w3.org/2000/svg">
+                <g id="Layer_3" data-name="Layer 3">
+                    <path
+                        d="m30.853 13.87a15 15 0 0 0 -29.729 4.082 15.1 15.1 0 0 0 12.876 12.918 15.6 15.6 0 0 0 2.016.13 14.85 14.85 0 0 0 7.715-2.145 1 1 0 1 0 -1.031-1.711 13.007 13.007 0 1 1 5.458-6.529 2.149 2.149 0 0 1 -4.158-.759v-10.856a1 1 0 0 0 -2 0v1.726a8 8 0 1 0 .2 10.325 4.135 4.135 0 0 0 7.83.274 15.2 15.2 0 0 0 .823-7.455zm-14.853 8.13a6 6 0 1 1 6-6 6.006 6.006 0 0 1 -6 6z">
+                    </path>
+                </g>
+            </svg>
+            <input type="text" class="input" placeholder="Enter your Email">
+        </div>
+    </div>
+    <div class="flex-column">
+        <label>Password</label>
+        <div class="inputForm">
+            <svg height="20" viewBox="-64 0 512 512" width="20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="m336 512h-288c-26.453125 0-48-21.523438-48-48v-224c0-26.476562 21.546875-48 48-48h288c26.453125 0 48 21.523438 48 48v224c0 26.476562-21.546875 48-48 48zm-288-288c-8.8125 0-16 7.167969-16 16v224c0 8.832031 7.1875 16 16 16h288c8.8125 0 16-7.167969 16-16v-224c0-8.832031-7.1875-16-16-16zm0 0">
+                </path>
+                <path
+                    d="m304 224c-8.832031 0-16-7.167969-16-16v-80c0-52.929688-43.070312-96-96-96s-96 43.070312-96 96v80c0 8.832031-7.167969 16-16 16s-16-7.167969-16-16v-80c0-70.59375 57.40625-128 128-128s128 57.40625 128 128v80c0 8.832031-7.167969 16-16 16zm0 0">
+                </path>
+            </svg>
+            <input type="password" class="input" placeholder="Enter your Password">
+        </div>
+    </div>
+    <div class="flex-column">
+        <label>Role</label>
+        <div class="inputForm">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-width="2"
+                    d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            </svg>
+            <select class="input">
+                <option value="" disabled selected>Select your Role</option>
+                <option value="admin">Admin</option>
+                <option value="student">Student</option>
+            </select>
+        </div>
+    </div>
+    <button class="button-submit" (click)="successRegister()">Sign Up</button>
+    <p class="p">Already have an account? <span class="span" (click)="goToLogin()">Sign In</span></p>
+
+</form> -->
+
+<form [formGroup]="signupForm" class="form" (ngSubmit)="onSubmit()">
+    <div class="flex-column">
+        <label>Username</label>
+        <div class="inputForm">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-width="2"
+                    d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            </svg>
+            <input type="text" class="input" placeholder="Enter your Username" formControlName="username" required>
+        </div>
+        <div *ngIf="signupForm.controls['username'].invalid && signupForm.controls['username'].touched" class="error">
+            Username is required.
+        </div>
+    </div>
+    <div class="flex-column">
+        <label>Email</label>
+        <div class="inputForm">
+            <svg height="20" viewBox="0 0 32 32" width="20" xmlns="http://www.w3.org/2000/svg">
+                <g id="Layer_3" data-name="Layer 3">
+                    <path
+                        d="m30.853 13.87a15 15 0 0 0 -29.729 4.082 15.1 15.1 0 0 0 12.876 12.918 15.6 15.6 0 0 0 2.016.13 14.85 14.85 0 0 0 7.715-2.145 1 1 0 1 0 -1.031-1.711 13.007 13.007 0 1 1 5.458-6.529 2.149 2.149 0 0 1 -4.158-.759v-10.856a1 1 0 0 0 -2 0v1.726a8 8 0 1 0 .2 10.325 4.135 4.135 0 0 0 7.83.274 15.2 15.2 0 0 0 .823-7.455zm-14.853 8.13a6 6 0 1 1 6-6 6.006 6.006 0 0 1 -6 6z">
+                    </path>
+                </g>
+            </svg>
+            <input type="text" class="input" placeholder="Enter your Email" formControlName="email" required>
+        </div>
+        <div *ngIf="signupForm.controls['email'].invalid && signupForm.controls['email'].touched" class="error">
+            Email is required and must be a valid email address.
+        </div>
+    </div>
+    <div class="flex-column">
+        <label>Password</label>
+        <div class="inputForm">
+            <svg height="20" viewBox="-64 0 512 512" width="20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="m336 512h-288c-26.453125 0-48-21.523438-48-48v-224c0-26.476562 21.546875-48 48-48h288c26.453125 0 48 21.523438 48 48v224c0 26.476562-21.546875 48-48 48zm-288-288c-8.8125 0-16 7.167969-16 16v224c0 8.832031 7.1875 16 16 16h288c8.8125 0 16-7.167969 16-16v-224c0-8.832031-7.1875-16-16-16zm0 0">
+                </path>
+                <path
+                    d="m304 224c-8.832031 0-16-7.167969-16-16v-80c0-52.929688-43.070312-96-96-96s-96 43.070312-96 96v80c0 8.832031-7.167969 16-16 16s-16-7.167969-16-16v-80c0-70.59375 57.40625-128 128-128s128 57.40625 128 128v80c0 8.832031-7.167969 16-16 16zm0 0">
+                </path>
+            </svg>
+            <input type="password" class="input" placeholder="Enter your Password" formControlName="password" required>
+        </div>
+        <div *ngIf="signupForm.controls['password'].invalid && signupForm.controls['password'].touched" class="error">
+            <!-- Password should contain at least 6 characters and include a mix of uppercase and lowercase letters, a
+            special character, and a number -->
+            Password should contain at least<br>
+            - 6 characters<br>
+            - an uppercase letter<br>
+            - a lowercase letter<br>
+            - a special character and<br>
+            - a number
+        </div>
+    </div>
+    <div class="flex-column">
+        <label>Role</label>
+        <div class="inputForm">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-width="2"
+                    d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            </svg>
+            <select class="input inputdrop" formControlName="role" required>
+                <option value="" disabled selected hidden>Select your Role</option>
+                <option value="Admin">Admin</option>
+                <option value="Student">Student</option>
+            </select>
+        </div>
+        <div *ngIf="signupForm.controls['role'].invalid && signupForm.controls['role'].touched" class="error">
+            Role is required.
+        </div>
+    </div>
+    <button class="button-submit" [ngClass]="{'button-disabled': signupForm.invalid}">Sign Up</button>
+    <p class="p">Already have an account? <span class="span" (click)="goToLogin()">Sign In</span></p>
+
+</form>

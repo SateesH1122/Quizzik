@@ -1,0 +1,97 @@
+<app-navbar></app-navbar>
+<div class="modal-content">
+    <div class="quiz-id-input" *ngIf="!showQuizAttempt && !quizCompleted">
+        <label>Enter Quiz ID:</label>
+        <input type="text" [(ngModel)]="quizId">
+        <button (click)="fetchQuiz()">Fetch Quiz</button>
+    </div>
+
+    <div *ngIf="quizSearched">
+
+        <div *ngIf="hasAttemptedQuiz">
+            <h2>You have already attempted the quiz.</h2>
+        </div>
+        <div *ngIf="!hasAttemptedQuiz">
+            <div *ngIf="quizFound">
+                <h2>{{ quizTitle }}</h2>
+                <p>{{ quizDescription }}</p>
+                <button *ngIf="quizFound && !showQuizAttempt" (click)="startQuiz()">Attempt Quiz</button>
+            </div>
+            <div *ngIf="!quizFound && !showQuizAttempt && !quizCompleted">
+                <h3>No Quiz Found</h3>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="showQuizAttempt">
+        <div class="quiz-attempt">
+            <h2>Question {{currentQuestionIndex+1}} : {{ currentQuestion.text }}</h2>
+            <div>
+                <div *ngFor="let option of currentQuestion.options">
+                    <input type="radio" [name]="'question-' + currentQuestionIndex"
+                        [(ngModel)]="userAnswers[currentQuestionIndex]" [value]="option">{{ option }}
+                </div>
+            </div>
+            <div class="timer">Time left: {{ timeLeft }} seconds</div>
+            <button (click)="onNextClick()">{{ currentQuestionIndex === questions.length -
+                1 ? 'Finish' : 'Next' }}</button>
+        </div>
+    </div>
+
+    <div *ngIf="quizCompleted && !showQuizAttempt">
+        <h2>Quiz Completed</h2>
+        <h3>Your Score: {{ score }} out of {{questions.length}}</h3>
+        <button (click)="navigateTo('user-dashboard')">Back to Dashboard</button>
+    </div>
+</div>
+<app-footer></app-footer>
+<!-- <app-navbar></app-navbar>
+<div class="modal-content">
+    <div *ngIf="!showQuizAttempt && !quizCompleted && !quizSearched">
+        <div class="quiz-id-input">
+            <label>Enter Quiz ID:</label>
+            <input type="text" [(ngModel)]="quizId">
+            <button (click)="fetchQuiz()">Fetch Quiz</button>
+        </div>
+    </div>
+
+    <div *ngIf="quizSearched && !showQuizAttempt && !quizCompleted">
+        <div *ngIf="hasAttemptedQuiz">
+            <h2>You have already attempted the quiz.</h2>
+        </div>
+        <div *ngIf="!hasAttemptedQuiz">
+            <div *ngIf="quizFound">
+                <h2>{{ quizTitle }}</h2>
+                <p>{{ quizDescription }}</p>
+                <button (click)="startQuiz()">Attempt Quiz</button>
+            </div>
+            <div *ngIf="!quizFound">
+                <h3>No Quiz Found</h3>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="showQuizAttempt">
+        <div class="quiz-attempt">
+            <h2>{{ quizTitle }}</h2>
+            <p>{{ quizDescription }}</p>
+            <h2>Question {{currentQuestionIndex+1}} : {{ currentQuestion.text }}</h2>
+            <div>
+                <div *ngFor="let option of currentQuestion.options">
+                    <input type="radio" [name]="'question-' + currentQuestionIndex"
+                        [(ngModel)]="userAnswers[currentQuestionIndex]" [value]="option">{{ option }}
+                </div>
+            </div>
+            <div class="timer">Time left: {{ timeLeft }} seconds</div>
+            <button (click)="onNextClick()">{{ currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next'
+                }}</button>
+        </div>
+    </div>
+
+    <div *ngIf="quizCompleted && !showQuizAttempt">
+        <h2>Quiz Completed</h2>
+        <h3>Your Score: {{ score }} out of {{questions.length}}</h3>
+        <button (click)="navigateTo('user-dashboard')">Back to Dashboard</button>
+    </div>
+</div>
+<app-footer></app-footer> -->

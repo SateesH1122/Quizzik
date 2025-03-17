@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<div class="modal-content">
+  <div class="quiz-card">
+    <h1>Create Quiz</h1>
+    <label>Title:</label>
+    <input type="text" [(ngModel)]="quizTitle">
+    <label>Description:</label>
+    <textarea [(ngModel)]="quizDescription" placeholder="Please type 30 or more characters"></textarea>
+  </div>
+
+  <div *ngFor="let question of questions; let i = index" class="question-card">
+    <button class="delete-btn" (click)="deleteQuestion(i)">X</button>
+    <label>Question {{ i + 1 }}:</label>
+    <input type="text" placeholder="Question Text" [(ngModel)]="question.text">
+
+    <label>Type:</label>
+    <select [(ngModel)]="question.type" (change)="updateOptions(i)">
+      <option value="mcq">MCQ</option>
+      <option value="truefalse">True/False</option>
+    </select>
+
+    <label>Difficulty:</label>
+    <select [(ngModel)]="question.difficulty">
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+
+    <div class="option-group" *ngFor="let option of question.options; let j = index">
+      <input type="radio" [name]="'question-' + i" [value]="option.text" (change)="setCorrectAnswer(i, j)">
+      <input type="text" [(ngModel)]="option.text">
+      <button class="delete-option-btn" (click)="deleteOption(i, j)" style="width: 7%;">X</button>
+    </div>
+    <button *ngIf="!qtypetf" class="add-option-btn" (click)="addOption(i)">+ Add Option</button>
+  </div>
+  <button class="add-question-btn" (click)="addQuestion()">Add Question</button>
+  <button class="save-btn" (click)="saveQuiz()">Save Quiz</button>
+  <button class="cancel-btn" (click)="navigateTo('dashboard')">Cancel</button>
+</div>
+
+<app-footer></app-footer>

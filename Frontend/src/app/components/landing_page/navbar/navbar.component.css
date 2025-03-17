@@ -1,0 +1,101 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(5px);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+}
+
+/* Navbar Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+/* Navbar Links */
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  padding: 8px 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.nav-links li a:hover {
+  color: white;
+  background-color: #0a0d33;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Dropdown styling */
+.profile-menu {
+  cursor: pointer;
+  position: relative;
+}
+
+.profile-link {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+  padding: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.dropdown-menu-item {
+  padding: 10px 20px;
+  color: white;
+  background: rgba(79, 73, 73, 0.167);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-align: left;
+}
+
+.dropdown-menu-item:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.profile-menu:hover .dropdown-menu {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  opacity: 1;
+  transform: translateY(0);
+}

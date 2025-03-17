@@ -1,0 +1,18 @@
+<div class="navbar-container">
+    <app-navbar></app-navbar>
+</div>
+<div class="home-container">
+    <!-- Left Side: Hero Section -->
+    <section class="hero-section">
+        <h1>Craft Your Own Quiz</h1>
+        <p>Engage, Learn, and Challenge Your Friends with Custom Quizzes.</p>
+        <!-- <button class="cta-btn">Get Started</button> -->
+    </section>
+    <section class="login-section">
+        <app-signup *ngIf="!isLoginMode" (switchToLogin)="toggleMode()"></app-signup>
+        <app-login *ngIf="isLoginMode" (switchToSignup)="toggleMode()"></app-login>
+    </section>
+</div>
+<div class="footer-container">
+    <app-footer></app-footer>
+</div>

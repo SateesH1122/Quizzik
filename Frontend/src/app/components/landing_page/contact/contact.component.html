@@ -1,0 +1,23 @@
+<!-- <app-navbar></app-navbar>
+<section class="contact">
+  <h2>Contact Us</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+<app-footer></app-footer> -->
+
+<app-navbar></app-navbar>
+<section class="contact">
+  <h2>Contact Us</h2>
+  <form (submit)="sendEmail($event)">
+    <input type="text" name="name" [value]="username" required readonly>
+    <input type="email" name="email" [value]="email" required readonly>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+<app-footer></app-footer>

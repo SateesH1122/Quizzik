@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<div class="delete-quiz-content">
+    <h1>Delete Quiz</h1>
+    <div *ngIf="quizzes.length === 0 " class="no-quiz-message">
+        <h2>NO QUIZ FOUND</h2>
+        <h5> First you should create a quiz to delete </h5>
+    </div>
+    <div *ngIf="quizzes.length >0 " class="dropdown">
+        <label>Select Quiz:</label>
+        <select [(ngModel)]="selectedQuiz">
+            <option *ngFor="let quiz of quizzes" [value]="quiz.quizID" selected>{{ quiz.title }}</option>
+        </select>
+        <button (click)="deletequiz()">Delete Quiz</button>
+    </div>
+    <button (click)="navigateTo('dashboard')">Back to Dashboard</button>
+</div>
+<app-footer></app-footer>

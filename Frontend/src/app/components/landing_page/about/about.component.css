@@ -1,0 +1,108 @@
+/* About Us Section - Glassmorphism */
+.about {
+  text-align: center;
+  padding: 60px 20px;
+  width: 70vw;
+  margin: 7% auto;
+  background: rgba(255, 255, 255, 0.1);
+  /* Transparent background */
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+  /* Glass effect */
+  -webkit-backdrop-filter: blur(15px);
+  /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* About Us Title */
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffcc00;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  position: relative;
+}
+
+/* Underline Effect */
+.about h2::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: #ffcc00;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* About Us Paragraph */
+.about p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+/* Features List */
+.about ul {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* List Item */
+.about li {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  /* Glass effect */
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin: 10px 0;
+  font-size: 1.1rem;
+  font-weight: 400;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+/* List Item Hover Effect */
+.about li:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(10px);
+}
+
+/* Icon for List Items */
+.about li::before {
+  content: "✔";
+  color: #ffcc00;
+  font-size: 1.2rem;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about {
+    padding: 40px 15px;
+  }
+
+  .about h2 {
+    font-size: 2rem;
+  }
+
+  .about p {
+    font-size: 1.1rem;
+  }
+
+  .about li {
+    font-size: 1rem;
+  }
+}

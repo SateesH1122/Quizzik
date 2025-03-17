@@ -1,0 +1,117 @@
+/* Contact Us Section - Glassmorphism */
+.contact {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 7% auto;
+  background: rgba(255, 255, 255, 0.1);
+  /* Transparent background */
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+  /* Glass effect */
+  -webkit-backdrop-filter: blur(15px);
+  /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Contact Us Title */
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #00ccff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  position: relative;
+}
+
+/* Underline Effect */
+.contact h2::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: #00ccff;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Contact Form */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+}
+
+/* Input Fields */
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  /* Glass effect */
+  color: #fff;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.contact input {
+  cursor: not-allowed;
+}
+
+/* Input Focus */
+.contact input:focus,
+.contact textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid #00ccff;
+  transform: scale(1.05);
+}
+
+/* Contact Button */
+.contact button {
+  padding: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #00ccff, #0077ff);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Button Hover Effect */
+.contact button:hover {
+  background: linear-gradient(135deg, #0077ff, #00ccff);
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 204, 255, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact {
+    padding: 40px 15px;
+  }
+
+  .contact h2 {
+    font-size: 2rem;
+  }
+
+  .contact form {
+    max-width: 90%;
+  }
+}

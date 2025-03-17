@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<div class="modal-content">
+    <div class="profile-card">
+        <h1>User Profile</h1>
+        <label>Username:</label>
+        <input type="text" [(ngModel)]="username" required>
+        <label>Email:</label>
+        <input type="email" [(ngModel)]="email" readonly>
+        <label>Password:</label>
+        <input type="password" [(ngModel)]="password" placeholder="Enter old/new password" required>
+    </div>
+    <button class="update-btn" (click)="updateProfile()">Update Profile</button>
+    <button class="cancel-btn" (click)="navigateTo('dashboard')">Back to Dashboard</button>
+</div>
+<app-footer></app-footer>

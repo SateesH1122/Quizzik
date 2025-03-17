@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<div class="leaderboard-content">
+  <h2>View Leaderboard</h2>
+  <div *ngIf="quizzes.length === 0 " class="no-quiz-message">
+    <h2>No quiz found</h2>
+    <h3> First you should create a quiz to view the leaderboard </h3>
+    <button (click)="navigateTo('dashboard')">Back to Dashboard</button>
+  </div>
+  <div *ngIf="quizzes.length > 0 " class="leaderboard-select-dropdown">
+    <label>Select Quiz:</label>
+    <select [(ngModel)]="selectedQuiz" (change)="getLeaderboard()">
+      <option *ngFor="let quiz of quizzes" [value]="quiz.quizID" selected>{{ quiz.title }}</option>
+    </select>
+    <button (click)="navigateTo('dashboard')">Back to Dashboard</button>
+  </div>
+  <br>
+
+  <div *ngIf="leaderboardEntries.length === 0  && quizzes.length !== 0" class="no-quiz-message">
+    <h2>No Quiz Attempts Found</h2>
+  </div>
+
+  <div *ngIf="quizzes.length > 0 && leaderboardEntries.length>0 " class="leaderboard-table">
+    <table>
+      <tr>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+      <tbody *ngFor="let user of leaderboardEntries; let i = index">
+        <tr>
+          <td>{{ i + 1 }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.score }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-footer></app-footer>
