@@ -30,7 +30,7 @@ This project aims to create, conduct, and analyze quizzes, making it an invaluab
    git clone https://github.com/SateesH1122/Quizzik.git
 2. Navigate to the project directory:
    ```bash
-   cd OnlineQuizPlatform
+   cd Quizzik
 3. Install the necessary dependencies:
    ```bash
    npm install
