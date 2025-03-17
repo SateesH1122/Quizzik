@@ -18,7 +18,7 @@ This module empowers administrators, such as teachers or quiz creators, to desig
 ### Quiz Attempt and Scoring
 This module provides users with an intuitive interface to browse and attempt available quizzes. Participants can answer questions in real-time, with timers ensuring adherence to time limits. The platform automatically evaluates answers upon quiz submission, providing immediate scores based on predefined rules. This module eliminates the need for manual grading and ensures consistent, unbiased evaluation for all participants.
 
-### Leaderboard and Analytics
+### Leaderboard
 The third module focuses on providing dynamic leaderboard ranks participants based on their scores, accuracy, and completion date and time.This module ensures transparency and motivates users to perform better in future attempts.
 
 ## Conclusion
