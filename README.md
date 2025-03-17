@@ -27,7 +27,7 @@ This project aims to create, conduct, and analyze quizzes, making it an invaluab
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/OnlineQuizPlatform.git
+   git clone https://github.com/SateesH1122/Quizzik.git
 2. Navigate to the project directory:
    ```bash
    cd OnlineQuizPlatform
@@ -36,6 +36,5 @@ This project aims to create, conduct, and analyze quizzes, making it an invaluab
    npm install
 4. Start the application
    ```bash
-   npm start
-   ```bash
    ng serve
+   
